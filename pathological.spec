@@ -1,6 +1,6 @@
 %define name pathological
 %define version 1.1.3
-%define release 2mdk
+%define release %mkrel 2
 
 
 Version: 	%{version}
