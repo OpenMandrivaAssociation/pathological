@@ -11,6 +11,7 @@ License: 	GPL
 Group: 		Games/Strategy
 Source: 	%{name}-%{version}.tar.bz2
 URL: 		http://pathological.sourceforge.net/
+BuildRequires:   netpbm
 Requires:   pygame
 
 %description
