@@ -33,15 +33,15 @@ make DESTDIR=$RPM_BUILD_ROOT install
 chmod 755 $RPM_BUILD_ROOT%_libdir/%name/bin/*
 
 (cd $RPM_BUILD_ROOT
-mkdir -p ./usr/lib/menu
-cat > ./usr/lib/menu/%{name} <<EOF
-?package(%{name}):\
-command="%_gamesbindir/pathological"\
-title="Pathological"\
-longtitle="Logical game"\
-needs="x11"\
-section="More Applications/Games/Strategy" \
-icon="strategy_section.png"
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+[Desktop Entry]
+Type=Application
+Exec=%_gamesbindir/pathological
+Name=Pathological
+Comment=Logical game
+Categories=Game;StrategyGame;
+Icon=strategy_section
 EOF
 )
 
@@ -63,6 +63,6 @@ rm -rf $RPM_BUILD_ROOT
 %_libdir/%name/bin/*
 %_prefix/X11R6/include/X11/pixmaps/*
 %_docdir/%name
-%_menudir/*
+%{_datadir}/applications/mandriva-*.desktop
 /var/games/*
 
