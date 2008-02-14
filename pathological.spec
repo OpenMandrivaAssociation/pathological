@@ -9,6 +9,7 @@ Name: 		%{name}
 Release: 	%{release}
 License: 	GPL
 Group: 		Games/Strategy
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Source: 	%{name}-%{version}.tar.bz2
 URL: 		http://pathological.sourceforge.net/
 BuildRequires:   netpbm
