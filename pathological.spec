@@ -46,11 +46,15 @@ Icon=strategy_section
 EOF
 )
 
+%if %mdkversion < 200900
 %post
 %update_menus
+%endif
  
+%if %mdkversion < 200900
 %postun
 %update_menus 
+%endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT
