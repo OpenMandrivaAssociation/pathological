@@ -1,19 +1,14 @@
-%define name pathological
-%define version 1.1.3
-%define release %mkrel 3
-
-
-Version: 	%{version}
+Name: 		pathological
 Summary: 	Logical game
-Name: 		%{name}
-Release: 	%{release}
-License: 	GPL
+Version: 	1.1.3
+Release: 	%{mkrel 3}
+License: 	GPLv2+
 Group: 		Games/Strategy
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Source: 	%{name}-%{version}.tar.bz2
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Source:		http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
 URL: 		http://pathological.sourceforge.net/
-BuildRequires:   netpbm
-Requires:   pygame
+BuildRequires:	netpbm
+Requires:	pygame
 
 %description
 To solve a level, you fill each wheel with four marbles of matching 
@@ -27,24 +22,22 @@ created using your favorite text editor.
 %build
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
+%makeinstall_std
 
-make DESTDIR=$RPM_BUILD_ROOT install
+chmod 755 %{buildroot}%{_libdir}/%{name}/bin/*
+rm -rf %{buildroot}%{_docdir}/%{name}
 
-chmod 755 $RPM_BUILD_ROOT%_libdir/%name/bin/*
-
-(cd $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
-cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+mkdir -p %{buildroot}%{_datadir}/applications/
+cat << EOF > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop
 [Desktop Entry]
 Type=Application
-Exec=%_gamesbindir/pathological
+Exec=%{_gamesbindir}/pathological
 Name=Pathological
-Comment=Logical game
+Comment=Logic game
 Categories=Game;StrategyGame;
 Icon=strategy_section
 EOF
-)
 
 %if %mdkversion < 200900
 %post
@@ -57,17 +50,16 @@ EOF
 %endif
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr (-,root,root)
 %doc README LICENSE
-%_gamesbindir/*
-%_mandir/man6/*
-%_datadir/games/%name
-%_libdir/%name/bin/*
-%_prefix/X11R6/include/X11/pixmaps/*
-%_docdir/%name
+%{_gamesbindir}/*
+%{_mandir}/man6/*
+%{_datadir}/games/%{name}
+%{_libdir}/%{name}/bin/*
+%{_prefix}/X11R6/include/X11/pixmaps/*
 %{_datadir}/applications/mandriva-*.desktop
-/var/games/*
+%{_localstatedir}/games/*
 
