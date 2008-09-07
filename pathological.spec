@@ -10,6 +10,7 @@ Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
 Patch0:		pathological-1.1.3-location.patch
 URL: 		http://pathological.sourceforge.net/
 BuildRequires:	netpbm
+BuildRequires:	ImageMagick
 Requires:	pygame
 
 %description
