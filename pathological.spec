@@ -22,6 +22,7 @@ created using your favorite text editor.
 %prep
 %setup -q  
 %patch0 -p1 -b .location
+sed -i -e 's,/usr/lib,%{_libdir},g' Makefile
 
 %build
 
