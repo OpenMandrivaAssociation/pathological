@@ -1,13 +1,15 @@
 Name: 		pathological
 Summary: 	Logical game
 Version: 	1.1.3
-Release: 	%{mkrel 3}
+Release: 	%mkrel 4
 License: 	GPLv2+
 Group: 		Games/Strategy
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
 # Don't install something to /usr/X11R6 - AdamW 2008/09
 Patch0:		pathological-1.1.3-location.patch
+# fix #35077
+Patch1:     pathological-1.1.3-fix_encoding.patch
 URL: 		http://pathological.sourceforge.net/
 BuildRequires:	netpbm
 BuildRequires:	ImageMagick
@@ -22,6 +24,8 @@ created using your favorite text editor.
 %prep
 %setup -q  
 %patch0 -p1 -b .location
+%patch1 -p0
+
 sed -i -e 's,/usr/lib,%{_libdir},g' Makefile
 
 %build
