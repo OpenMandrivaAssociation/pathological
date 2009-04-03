@@ -1,7 +1,7 @@
 Name: 		pathological
 Summary: 	Logical game
 Version: 	1.1.3
-Release: 	%mkrel 5
+Release: 	%mkrel 6
 License: 	GPLv2+
 Group: 		Games/Puzzles
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -48,7 +48,7 @@ Type=Application
 Exec=%{_gamesbindir}/pathological
 Name=Pathological
 Comment=Logic game
-Categories=Game;StrategyGame;
+Categories=Game;LogicGame;
 Icon=%{name}
 EOF
 
