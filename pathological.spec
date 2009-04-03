@@ -1,9 +1,9 @@
 Name: 		pathological
 Summary: 	Logical game
 Version: 	1.1.3
-Release: 	%mkrel 4
+Release: 	%mkrel 5
 License: 	GPLv2+
-Group: 		Games/Strategy
+Group: 		Games/Puzzles
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
 # Don't install something to /usr/X11R6 - AdamW 2008/09
