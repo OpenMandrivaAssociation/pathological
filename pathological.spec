@@ -1,7 +1,7 @@
 Name: 		pathological
 Summary: 	Logical game
 Version: 	1.1.3
-Release: 	%mkrel 6
+Release: 	%mkrel 7
 License: 	GPLv2+
 Group: 		Games/Puzzles
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
