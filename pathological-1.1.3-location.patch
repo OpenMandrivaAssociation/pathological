@@ -1,0 +1,13 @@
+--- pathological-1.1.3/Makefile	2003-07-17 08:05:04.000000000 -0700
++++ pathological-1.1.3/Makefile.new	2008-09-07 08:13:03.000000000 -0700
+@@ -27,8 +27,8 @@
+ 	-chgrp games $(DESTDIR)/usr/lib/pathological/bin/write-highscores
+ 	-chmod 2755 $(DESTDIR)/usr/lib/pathological/bin/write-highscores
+ 
+-	mkdir -p $(DESTDIR)/usr/X11R6/include/X11/pixmaps
+-	cp pathological.xpm $(DESTDIR)/usr/X11R6/include/X11/pixmaps
++	mkdir -p $(DESTDIR)/usr/include/X11/pixmaps
++	cp pathological.xpm $(DESTDIR)/usr/include/X11/pixmaps
+ 
+ 	mkdir -p $(DESTDIR)/var/games
+ 	cp pathological_scores $(DESTDIR)/var/games
