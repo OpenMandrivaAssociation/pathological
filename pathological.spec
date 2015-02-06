@@ -1,7 +1,7 @@
 Name: 		pathological
 Summary: 	Logical game
 Version: 	1.1.3
-Release: 	8
+Release: 	9
 License: 	GPLv2+
 Group: 		Games/Puzzles
 Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
