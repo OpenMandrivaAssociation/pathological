@@ -9,7 +9,7 @@ Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
 Patch0:		pathological-1.1.3-location.patch
 # fix #35077
 Patch1:     pathological-1.1.3-fix_encoding.patch
-URL: 		http://pathological.sourceforge.net/
+URL: 		https://pathological.sourceforge.net/
 BuildRequires:	netpbm
 BuildRequires:	imagemagick
 Requires:	pygame
